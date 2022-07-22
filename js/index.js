@@ -1,10 +1,12 @@
 // ********************************************
 // SETUP
-const form = document.querySelector('#new-pp-form');
+const rollForm = document.querySelector('#new-pp-form');
+const delForm = document.querySelector('#del-pp-form');
 
 // Bind event listeners
-form.addEventListener('submit', submitPp);
+rollForm.addEventListener('submit', submitPp);
+delForm.addEventListener('submit', resetPp);
 
-// Fetch all cats as soon as app is loaded
+// Fetch all pp as soon as app is loaded
 getAllPp();
 // ********************************************
