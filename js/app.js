@@ -1,13 +1,15 @@
 // ********************************************
 // PP FLOW
 const serverURL = "https://potato-or-pepsi-server.herokuapp.com"
+// const serverURL = "localhost:3000"
 
 // index
 function getAllPp() {
+  console.log(`${serverURL}/pp`)
   fetch(`${serverURL}/pp`)
-    .then((r) => r.json())
+    .then((res) => res.json())
     .then(appendPps)
-    .catch(console.warn); // ??
+    .catch(console.warn);
 }
 
 // reset all
@@ -22,7 +24,7 @@ function resetPp(e) {
   e.preventDefault();
   fetch(`${serverURL}/pp`, options)
     .then((r) => r.json())
-    .then(appendPp)
+    .then(removePp)
     .catch(console.warn);
 }
 
@@ -42,8 +44,9 @@ function submitPp(e) {
       break;
   }
 
-  console.log(rnd)
-  console.log(rndPp)
+  console.log("random number generated: ",rnd)
+  console.log("Potato or Pepsi? ",rndPp)
+
   const ppData = {
     name: rndPp
   };
@@ -71,16 +74,18 @@ function appendPp(ppData) {
   const newDiv = document.createElement("div");
   const ppSection = document.querySelector(".ppOutput")
   console.log("appending...",ppData.name)
-  switch (ppData.name) {
-    case "potato":
-        newDiv.classList.add("potato")
-      break;
-    case "pepsi":
-        newDiv.classList.add("pepsi")
-      break;
+  ppData.name === "potato" ? newDiv.classList.add("potato") : newDiv.classList.add("pepsi")
+  newDiv.classList.add("ppObject")
+  ppSection.appendChild(newDiv)   
+  console.log("pp added") 
+}
+
+function removePp(){
+  const ppDivs = document.querySelectorAll('.ppObject')
+  while (ppDivs.length > 0) {
+    ppDivs[0].parentNode.removeChild(ppDivs[0])
   }
-  newDiv.classList.add("potato")
-  ppSection.appendChild(newDiv)    
+  console.log("pp eradicated")
 }
 
 // ********************************************
