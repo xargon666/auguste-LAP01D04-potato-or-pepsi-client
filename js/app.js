@@ -1,8 +1,10 @@
 // ********************************************
 // PP FLOW
+const serverURL = "https://potato-or-pepsi-server.herokuapp.com"
+
 // index
 function getAllPp() {
-  fetch("http://localhost:3000/pp")
+  fetch(`${serverURL}/pp`)
     .then((r) => r.json())
     .then(appendPps)
     .catch(console.warn); // ??
