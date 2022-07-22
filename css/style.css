@@ -50,11 +50,17 @@ header {
 .potato {
   content: url("../img/potato.png");
   width: 120px;
+  filter: drop-shadow(3px 3px 5px #5E5DF0);
 }
 
 .pepsi {
   content: url("../img/pepsi.png");
   width: 100px;
+  filter: drop-shadow(3px 3px 5px #5E5DF0);
+}
+
+.btn-group{
+  display:flex;
 }
 
 /* CSS */
@@ -78,4 +84,5 @@ header {
   width: fit-content;
   word-break: break-word;
   border: 0;
+  margin: 1rem;
 }
