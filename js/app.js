@@ -16,6 +16,7 @@ function getAllPp() {
 function resetPp(e) {
   const options = {
     method: "DELETE",
+    body: "",
     headers: {
       "Content-Type": "application/json",
     },
@@ -23,7 +24,6 @@ function resetPp(e) {
 
   e.preventDefault();
   fetch(`${serverURL}/pp`, options)
-    .then((r) => r.json())
     .then(removePp)
     .catch(console.warn);
 }
