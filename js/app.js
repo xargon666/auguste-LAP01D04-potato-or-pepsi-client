@@ -10,6 +10,22 @@ function getAllPp() {
     .catch(console.warn); // ??
 }
 
+// reset all
+function resetPp(e) {
+  const options = {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+
+  e.preventDefault();
+  fetch(`${serverURL}/pp`, options)
+    .then((r) => r.json())
+    .then(appendPp)
+    .catch(console.warn);
+}
+
 // create
 function submitPp(e) {
   e.preventDefault();
@@ -73,5 +89,6 @@ module.exports = {
     getAllPp,
     submitPp,
     appendPps,
-    appendPp
+    appendPp,
+    resetPp
 };
