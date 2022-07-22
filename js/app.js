@@ -81,9 +81,10 @@ function appendPp(ppData) {
 }
 
 function removePp(){
-  const ppDivs = document.querySelectorAll('.ppObject')
+  let ppDivs = document.querySelectorAll('.ppObject')
   while (ppDivs.length > 0) {
     ppDivs[0].parentNode.removeChild(ppDivs[0])
+    ppDivs = document.querySelectorAll('.ppObject')
   }
   console.log("pp eradicated")
 }
