@@ -1,6 +1,6 @@
 // ********************************************
 // PP FLOW
-const serverURL = "https://potato-or-pepsi-server.herokuapp.com";
+const serverURL = "https://auguste-lap01d04-potato-or-pepsi-server.onrender.com"
 console.log(`Server host: ${serverURL}`);
 // const serverURL = "localhost:3000"
 
